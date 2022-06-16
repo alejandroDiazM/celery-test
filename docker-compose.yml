@@ -1,0 +1,17 @@
+services:
+
+  redis-broker:
+    image: redis
+    ports:
+      - "6379:6379"
+    container_name: redis-broker
+  
+  redis-backend:
+    image: redis
+    ports:
+      - "6380:6379"
+    container_name: redis-backend
+
+  worker:
+    image: celery-worker
+    container_name: worker
